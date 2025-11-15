@@ -1,5 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { HomeScreen } from '@/screens/HomeScreen';
 
 import './global.css';
