@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ViewStyle } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
-import { Colors, Shadows } from '@/constants/theme';
+import { Shadows } from '@/constants/theme';
 
 interface CardProps {
   children: React.ReactNode;

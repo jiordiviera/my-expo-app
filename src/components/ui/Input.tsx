@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TextInput, View, Text, TextInputProps } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { Colors } from '@/constants/theme';
@@ -10,7 +10,6 @@ interface InputProps extends TextInputProps {
 }
 
 export const Input: React.FC<InputProps> = ({ label, error, icon, ...props }) => {
-  const [isFocused, setIsFocused] = useState(false);
   const borderWidth = useSharedValue(1);
   const borderColor = useSharedValue(Colors.text.light);
 
@@ -20,13 +19,11 @@ export const Input: React.FC<InputProps> = ({ label, error, icon, ...props }) =>
   }));
 
   const handleFocus = () => {
-    setIsFocused(true);
     borderWidth.value = withTiming(2, { duration: 200 });
     borderColor.value = Colors.primary.green;
   };
 
   const handleBlur = () => {
-    setIsFocused(false);
     borderWidth.value = withTiming(1, { duration: 200 });
     borderColor.value = error ? Colors.status.error : Colors.text.light;
   };

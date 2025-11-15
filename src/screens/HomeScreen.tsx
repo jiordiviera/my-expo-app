@@ -39,15 +39,13 @@ const features = [
 
 export const HomeScreen: React.FC = () => {
   return (
-    <View className="flex-1" style={{ backgroundColor: Colors.background.light }}>
-      <ScrollView className="flex-1 px-4">
-        <Animated.View entering={FadeInDown.delay(100).springify()} className="pt-12 pb-6">
+    <View className="flex-1">
+      <ScrollView className="px-4">
+        <Animated.View entering={FadeInDown.delay(100).springify()} className="pb-6 pt-12">
           <View className="mb-2 flex-row items-center justify-between">
             <View>
-              <Text className="text-3xl font-bold" style={{ color: Colors.text.primary }}>
-                Bienvenue! 👋
-              </Text>
-              <Text className="mt-1 text-base" style={{ color: Colors.text.secondary }}>
+              <Text className="text-primary text-3xl font-bold">Bienvenue! 👋</Text>
+              <Text className="text-secondary mt-1 text-base">
                 Découvrez ce qui se passe au Cameroun
               </Text>
             </View>
@@ -97,31 +95,21 @@ export const HomeScreen: React.FC = () => {
               <Pressable key={index}>
                 <Card pressable>
                   <View className="flex-row items-center">
-                    <View
-                      className="mr-4 h-14 w-14 items-center justify-center rounded-2xl"
-                      style={{ backgroundColor: `${Colors.primary.green}15` }}>
+                    <View className="bg-primary-green/15 bg-primary/15 mr-4 h-14 w-14 items-center justify-center rounded-2xl">
                       <Text className="text-3xl">{feature.icon}</Text>
                     </View>
                     <View className="flex-1">
                       <View className="mb-1 flex-row items-center">
-                        <Text
-                          className="mr-2 text-lg font-bold"
-                          style={{ color: Colors.text.primary }}>
-                          {feature.title}
-                        </Text>
+                        <Text className="text-primary mr-2 text-lg font-bold">{feature.title}</Text>
                         <Badge
                           label={feature.badge}
                           variant={index === 1 ? 'info' : 'success'}
                           size="sm"
                         />
                       </View>
-                      <Text className="text-sm" style={{ color: Colors.text.secondary }}>
-                        {feature.description}
-                      </Text>
+                      <Text className="text-secondary text-sm">{feature.description}</Text>
                     </View>
-                    <Text className="text-2xl" style={{ color: Colors.text.light }}>
-                      ›
-                    </Text>
+                    <Text className="text-nonary text-2xl">›</Text>
                   </View>
                 </Card>
               </Pressable>
